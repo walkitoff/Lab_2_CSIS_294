@@ -1,6 +1,14 @@
+/** @group_6
+ * Tyler Dollick
+ * Evan Lindemann
+ * Reese Norris
+ * **/
+
 import java.util.ArrayList;
 
-public class Test {
+
+//TODO: main()  should only call  method manage();
+public class MerkleManager_Test {
     public static void main(String[] args) {
 
         // BEGIN Merkle root test
