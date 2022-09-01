@@ -1,8 +1,9 @@
 /********************
- *   @group_6       *
- * Tyler Dollick    *
- * Evan Lindemann   *
- * Reese Norris     *
+ *    @group_6      *
+ *    Authors:      *
+ *  Tyler Dollick   *
+ *  Evan Lindemann  *
+ *  Reese Norris    *
  ********************/
 
 import java.util.ArrayList;
