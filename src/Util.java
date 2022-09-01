@@ -4,7 +4,6 @@ import java.security.SecureRandom;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-
 public class Util {
 
     public String getMerkleRoot(ArrayList<String> lstItems){
@@ -33,17 +32,13 @@ public class Util {
         return oNode7.sHash;
     }
 
-
     public void populateMerkleNode(MerkleNode oNode, MerkleNode oLeftNode, MerkleNode oRightNode){
         oNode.oLeft = oLeftNode;
         oNode.oRight = oRightNode;
         oNode.sHash = generateHash(oNode.oLeft.sHash + oNode.oRight.sHash);
-
     }
 
-
     public synchronized String generateHash(String sOriginal) {
-
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
             byte[] btEncodedhash = digest.digest(
@@ -62,9 +57,7 @@ public class Util {
         }
     }
 
-
     public void sleepRandomTime(String sThreadName){
-
         // Gets random number between 0 and 5 and then adds 3, meaning between 3 and 8 now.
         int iSleepTime = new SecureRandom().nextInt(5) + 3;
 
@@ -72,10 +65,8 @@ public class Util {
         sleep(iSleepTime);
     }
 
-
     //DONE: fnish this method sleep(int)
     public void sleep(int iSeconds){
-
         try{
             Thread.sleep(iSeconds * 1000);
         }
@@ -84,13 +75,10 @@ public class Util {
         }
     }
 
-//DONE: finish this method: promptUser(String){}
+    //DONE: finish this method: promptUser(String){}
     public String promptUser(String sQuestion ){
-
         JOptionPane oQuestion  = new JOptionPane();
         String sAnswer = oQuestion.showInputDialog(sQuestion);
         return sAnswer;
     }
-
-
 }

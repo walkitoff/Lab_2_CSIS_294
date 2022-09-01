@@ -3,7 +3,6 @@ public class MonitorThread implements Runnable {
 
     //TODO: create method:  public run() method that is triggered when "start()  method" is called
     public void run() {
-
         //DONE: create enless loop:
         while(true) {
             //TODO:   i.	If MerkleManager.sMerkleRoot is not null then…
@@ -22,8 +21,6 @@ public class MonitorThread implements Runnable {
             //TODO: iii.	After the if-else statement, then call sleep on util object and sleep for 1 second.
             //        1.	(if you don’t do this, the endless loop never allows updates on that thread to see
             //              MerkleManager’s changing values.)
-
         }
     }
-
 }

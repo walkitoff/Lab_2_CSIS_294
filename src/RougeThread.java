@@ -1,4 +1,3 @@
-
 //DONE: implements Runnable
 public class RougeThread implements Runnable {
 
@@ -10,6 +9,4 @@ public class RougeThread implements Runnable {
         //      a.	Increase iStrikes static variable on MerkleManager by 1.
         //      b.	Print out to screen that rogue grabbed a word and mention “STRIKE!”
     }
-
-
 }

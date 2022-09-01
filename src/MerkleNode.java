@@ -1,4 +1,3 @@
-
 public class MerkleNode {
 
     public String sHash;

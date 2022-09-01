@@ -1,4 +1,3 @@
-
 //TODO: REMOVE LATER :: use this for partial example to RougeThread  & MerkleThread
 public class MinorThread implements Runnable {
 
@@ -12,7 +11,5 @@ public class MinorThread implements Runnable {
             Util oUtil = new Util();
             oUtil.sleepRandomTime(this.threadName);
         }
-
     }
-
 }
