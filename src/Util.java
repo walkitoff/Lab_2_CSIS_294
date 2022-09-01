@@ -2,8 +2,8 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.SecureRandom;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
-import static java.lang.Thread.sleep;
 
 public class Util {
 
@@ -27,10 +27,12 @@ public class Util {
         oNode1.sHash = generateHash(lstItems.get(2));
         oNode1.sHash = generateHash(lstItems.get(3));
 
+
         populateMerkleNode(oNode7, oNode5, oNode6);
 
         return oNode7.sHash;
     }
+
 
     public void populateMerkleNode(MerkleNode oNode, MerkleNode oLeftNode, MerkleNode oRightNode){
         oNode.oLeft = oLeftNode;
@@ -38,6 +40,7 @@ public class Util {
         oNode.sHash = generateHash(oNode.oLeft.sHash + oNode.oRight.sHash);
 
     }
+
 
     public synchronized String generateHash(String sOriginal) {
 
@@ -59,6 +62,7 @@ public class Util {
         }
     }
 
+
     public void sleepRandomTime(String sThreadName){
 
         // Gets random number between 0 and 5 and then adds 3, meaning between 3 and 8 now.
@@ -68,7 +72,9 @@ public class Util {
         sleep(iSleepTime);
     }
 
-    private void sleep(int iSeconds){
+
+    //DONE: fnish this method sleep(int)
+    public void sleep(int iSeconds){
 
         try{
             Thread.sleep(iSeconds * 1000);
@@ -76,6 +82,14 @@ public class Util {
         catch(Exception ex){
             //do nothing
         }
+    }
+
+//DONE: finish this method: promptUser(String){}
+    public String promptUser(String sQuestion ){
+
+        JOptionPane oQuestion  = new JOptionPane();
+        String sAnswer = oQuestion.showInputDialog(sQuestion);
+        return sAnswer;
     }
 
 
