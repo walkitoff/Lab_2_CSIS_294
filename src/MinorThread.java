@@ -1,5 +1,5 @@
 
-//TODO: remove, keeping for reference until later.
+//TODO: REMOVE LATER :: use this for partial example to RougeThread  & MerkleThread
 public class MinorThread implements Runnable {
 
     public String threadName;
