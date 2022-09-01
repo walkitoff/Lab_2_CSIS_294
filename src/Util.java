@@ -1,39 +1,39 @@
+import javax.swing.*;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.SecureRandom;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 
 public class Util {
 
-    public String getMerkleRoot(ArrayList<String> lstItems){
-        //hard code tree intput to 4 items
-        //4 leafs
+    public String getMerkleRoot(ArrayList<String> lstItems) {
+        // Hardcode tree input to 4 items
         MerkleNode oNode1 = new MerkleNode();
         MerkleNode oNode2 = new MerkleNode();
         MerkleNode oNode3 = new MerkleNode();
         MerkleNode oNode4 = new MerkleNode();
-        //parent trees
-        MerkleNode oNode5 = new MerkleNode(); // 1 + 2
-        MerkleNode oNode6 = new MerkleNode(); // 3 + 4
-        //root
-        MerkleNode oNode7 = new MerkleNode(); // 5 + 6
+        MerkleNode oNode5 = new MerkleNode();
+        MerkleNode oNode6 = new MerkleNode();
+        MerkleNode oNode7 = new MerkleNode();
 
-
-        //build leafs
+        // Build merkle tree to get merkle root
         oNode1.sHash = generateHash(lstItems.get(0));
-        oNode1.sHash = generateHash(lstItems.get(1));
-        oNode1.sHash = generateHash(lstItems.get(2));
-        oNode1.sHash = generateHash(lstItems.get(3));
+        oNode2.sHash = generateHash(lstItems.get(1));
+        oNode3.sHash = generateHash(lstItems.get(2));
+        oNode4.sHash = generateHash(lstItems.get(3));
 
+        populateMerkleNode(oNode5, oNode1, oNode2);
+        populateMerkleNode(oNode6, oNode3, oNode4);
 
+        // Get merkle root node
         populateMerkleNode(oNode7, oNode5, oNode6);
 
+        // Return merkle root sha256
         return oNode7.sHash;
     }
 
-    public void populateMerkleNode(MerkleNode oNode, MerkleNode oLeftNode, MerkleNode oRightNode){
-        oNode.oLeft = oLeftNode;
+    public void populateMerkleNode(MerkleNode oNode, MerkleNode oleftNode, MerkleNode oRightNode) {
+        oNode.oLeft = oleftNode;
         oNode.oRight = oRightNode;
         oNode.sHash = generateHash(oNode.oLeft.sHash + oNode.oRight.sHash);
     }
@@ -50,14 +50,14 @@ public class Util {
                 sb.append(Integer.toString((btEncodedhash[i] & 0xff) + 0x100, 16).substring(1));
             }
             return sb.toString();
-        } catch (Exception ex) {
-
+        }
+        catch(Exception ex){
             System.out.println("Error generating hash: " + ex.getMessage());
             return null;
         }
     }
 
-    public void sleepRandomTime(String sThreadName){
+    public void sleepRandomTime(String sThreadName) {
         // Gets random number between 0 and 5 and then adds 3, meaning between 3 and 8 now.
         int iSleepTime = new SecureRandom().nextInt(5) + 3;
 
@@ -65,20 +65,18 @@ public class Util {
         sleep(iSleepTime);
     }
 
-    //DONE: fnish this method sleep(int)
-    public void sleep(int iSeconds){
-        try{
+    private void sleep(int iSeconds) {
+        try {
             Thread.sleep(iSeconds * 1000);
         }
-        catch(Exception ex){
-            //do nothing
+        catch(Exception e) {
+            // do nothing
         }
     }
 
-    //DONE: finish this method: promptUser(String){}
-    public String promptUser(String sQuestion ){
-        JOptionPane oQuestion  = new JOptionPane();
-        String sAnswer = oQuestion.showInputDialog(sQuestion);
-        return sAnswer;
+    public String promptUser(String question) {
+        JOptionPane oQuestion = new JOptionPane();
+        String answer = oQuestion.showInputDialog(question);
+        return answer;
     }
 }
