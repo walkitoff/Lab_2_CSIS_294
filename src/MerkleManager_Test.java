@@ -7,7 +7,6 @@
 
 import java.util.ArrayList;
 
-
 //TODO: main()  should only call  method manage();
 public class MerkleManager_Test {
     public static void main(String[] args) {
@@ -37,5 +36,4 @@ public class MerkleManager_Test {
         Thread oThread2 = new Thread(oMiner2);
         oThread2.start();  //start()  method of Thread class
     }
-
 }

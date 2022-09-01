@@ -23,6 +23,4 @@ public class MerkleManager {
         // sets instance variable userWord to null;
         //TODO: return temp String variable
     }
-
-
 }
