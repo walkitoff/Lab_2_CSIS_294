@@ -21,7 +21,7 @@ public class MerkleManager {
     public static synchronized String grabWord() {
         //TODO: Puts instance variable of user's word into a temp String variable then
         // sets instance variable userWord to null;
-        //returns temp String variable
+        //TODO: return temp String variable
     }
 
 

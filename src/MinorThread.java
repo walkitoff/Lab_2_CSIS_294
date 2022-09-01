@@ -1,3 +1,5 @@
+
+//TODO: remove, keeping for reference until later.
 public class MinorThread implements Runnable {
 
     public String threadName;
