@@ -1,26 +1,32 @@
+// Merkle Manager
+// Authors: Tyler Dollick, Reese Norris
+
 public class MerkleManager {
 
-    //DONE: Instance Variables
-    public static volatile String userWord; //user's inputted word
-    public static String expected_Merkle_Root;
-    public static String merkleRoot = null;
-    public static int strikes = 0;
+    public static volatile String inputWord;
+    public static String expectedMerkleRoot;
+    public static String actualMerkleRoot = null;
+    public static int strikeCount = 0;
 
-    //TODO: create public method: manage()  to be called in main() of MerkleManager_Test
-        //see READEME.md ii. 2. for full instructions
     public void manage() {
-        //TODO: prompt user for Expected Merkle Root  ...aka the hash of the merkle root
-        //TODO: put user input into expected_Merkle_Root variable
-        //TODO: Start 3 separate threads: instantiate and start() new threads for ...
-        // MerkleThread, RogueThread and MonitorThread
-        //TODO: Begin UI question Loop:
-             //while(true)...ask user for a word and put it into  String userWord;
+        Util util = new Util();
+        MerkleManager.expectedMerkleRoot = util.promptUser("Enter expected merkle root:");
+
+        Thread merkleThread = new Thread(new MerkleThread());
+        Thread rogueThread = new Thread(new RougeThread());
+        Thread monitorThread = new Thread(new MonitorThread());
+        merkleThread.start();
+        rogueThread.start();
+        monitorThread.start();
+
+        while (true) {
+            MerkleManager.inputWord = util.promptUser("Enter word:");
+        }
     }
 
-    //TODO: create method: public static synchronized String grabWord()
     public static synchronized String grabWord() {
-        //TODO: Puts instance variable of user's word into a temp String variable then
-        // sets instance variable userWord to null;
-        //TODO: return temp String variable
+        String temp = inputWord;
+        inputWord = null;
+        return temp;
     }
 }
