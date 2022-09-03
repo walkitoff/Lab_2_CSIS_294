@@ -7,6 +7,10 @@ Skills covered in this lab that were reviewed in class:
 •	SHA256 Hashing
 •	Merkle trees
 •	Multithreading
+    **FUN FACT: The purpose of start() is to create a separate call stack for the thread. 
+    A separate call stack is created by it, 
+    and then run() is called by JVM.**
+    
 
 TIP:  Remember, don't be overwhelmed by all the details.  Simply focus on one line at a time as the instructions walk you through the creation of the app.  
 
