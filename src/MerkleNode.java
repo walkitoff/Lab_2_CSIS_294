@@ -1,3 +1,5 @@
+// Merkle Node
+
 public class MerkleNode {
 
     public String sHash;

@@ -1,17 +1,17 @@
-//DONE: implements Runnable
+// Rogue Thread
 // Authors: Evan Lindemann
+
 public class RogueThread implements Runnable {
+
     @Override
     public void run() {
-        Util oUtil2 = new Util();
+        Util oUtil = new Util();
 
         while(true)
         {
-
-            oUtil2.sleepRandomTime("Rogue");
+            oUtil.sleepRandomTime("Rogue");
             String sNewWord = MerkleManager.grabWord();
-            if (sNewWord != null)
-            {
+            if (sNewWord != null) {
                 // **** when strike reaches 3 nothing happens right now ****
                 //Fixed.... not sure what fixed it tho.
                 MerkleManager.strikeCount++;

@@ -1,6 +1,10 @@
+// Merkle Thread
+// Authors: Tyler Dollick
+
 import java.util.ArrayList;
 
 public class MerkleThread implements Runnable {
+
     public static volatile ArrayList<String> lstWords;  //hold grabbed words
     private int iMerkleTreeInputs = 4; // required # of words to get before creating merkle tree
 
