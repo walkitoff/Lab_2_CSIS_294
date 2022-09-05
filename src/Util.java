@@ -1,3 +1,6 @@
+// Util
+// Authors: Reese Norris, Tyler Dollick
+
 import javax.swing.*;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -65,7 +68,7 @@ public class Util {
         sleep(iSleepTime);
     }
 
-    private void sleep(int iSeconds) {
+    public void sleep(int iSeconds) {
         try {
             Thread.sleep(iSeconds * 1000);
         }
