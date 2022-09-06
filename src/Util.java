@@ -1,5 +1,4 @@
 // Util
-// Authors: Reese Norris, Tyler Dollick
 
 import javax.swing.*;
 import java.nio.charset.StandardCharsets;

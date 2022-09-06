@@ -1,9 +1,7 @@
 // Monitor Thread
-// Authors: Tyler Dollick, Reese Norris
 
 public class MonitorThread implements Runnable {
 
-    @Override
     public void run() {
         while (true) {
             if (MerkleManager.actualMerkleRoot != null) {

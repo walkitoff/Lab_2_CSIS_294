@@ -1,5 +1,4 @@
 // Merkle Thread
-// Authors: Tyler Dollick
 
 import java.util.ArrayList;
 

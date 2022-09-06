@@ -1,5 +1,4 @@
 // Merkle Manager
-// Authors: Tyler Dollick, Reese Norris
 
 public class MerkleManager {
 
